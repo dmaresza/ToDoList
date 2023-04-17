@@ -4,6 +4,11 @@
  */
 package com.lynxprogramming.ToDoList.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import java.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -11,8 +16,11 @@ import org.springframework.format.annotation.DateTimeFormat;
  *
  * @author daniel
  */
+@Entity
 public class Task {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private Integer priority;
     private String description;
