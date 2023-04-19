@@ -13,6 +13,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         
         <a href="newTask">Add new task</a>
         <h2>ToDo List</h2>
+        
+        <a href="sortByPriority">Sort by priority</a><br/>
+        <br/>
 
         <table>
             <tr>

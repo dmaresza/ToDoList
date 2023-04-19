@@ -27,7 +27,6 @@ public class MainController {
     
     @RequestMapping("/")
     public String getTasks(Model model) {
-        
         List<Task> tasks = taskRepository.findAll();
         model.addAttribute("tasks", tasks);
         return "index";
@@ -48,5 +47,12 @@ public class MainController {
     public String addTask(@ModelAttribute Task task) {
         taskRepository.save(task);
         return "redirect:/";
+    }
+    
+    @RequestMapping("/sortByPriority")
+    public String getAllByPriority(Model model) {
+        List<Task> tasks = taskRepository.findAllByOrderByPriority();
+        model.addAttribute("tasks", tasks);
+        return "index";
     }
 }
